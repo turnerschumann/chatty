@@ -13,8 +13,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      usernameInput: 'Bob',
-      currentUser: {name: "Bob"}, // optional. if currentUser is not defined, it means the user is Anonymous
+      currentUser: {name: "Anonymous"}, // optional. if currentUser is not defined, it means the user is Anonymous
       messages: []
     }
 
@@ -23,14 +22,23 @@ class App extends Component {
   }
 
   handleChange(event) {
-    // console.log(event.target.value);
-    this.setState({currentUser: {name: event.target.value}});
+
+      event.preventDefault()
+      console.log("New username submitted")
+      const currentUser = this.state.currentUser.name;
+      const newUser = event.target.value
+      const message = JSON.stringify({type: "notification", content:`${currentUser} has changed their name to ${newUser}`});
+
+      this.connection.send(message)
+      console.log("This was sent:" + message)
+      this.setState({currentUser: {name: newUser},});
+
   }
 
   onCompose(event) {
     if(event.key === 'Enter') {
       event.preventDefault()
-      const newMessage = {username: this.state.currentUser.name, content: event.target.value };
+      const newMessage = {type: "message", username: this.state.currentUser.name, content: event.target.value };
       const stringifiedMessage = JSON.stringify(newMessage);
 
       this.connection.send(stringifiedMessage);
@@ -54,10 +62,32 @@ class App extends Component {
     this.connection.onmessage = (event) => {
 
       // console.log(JSON.parse(event.data));
+      const data = JSON.parse(event.data);
+      // console.log("Recieved data rom server: " + data.type);
+      const messages = this.state.messages.concat(data);
+      switch(data.type) {
+        case "notification":
 
-      const messages = this.state.messages.concat(JSON.parse(event.data));
-      this.setState({messages: messages})
-      console.log(this.state.messages);
+          // console.log("What is this: " + this);
+            this.setState({
+              // type: data.type,
+              messages: messages
+            });
+          break;
+        case "message":
+          // const messages = this.state.messages.concat(data);
+          this.setState({
+              // type: data.type,
+              messages: messages
+            });
+          // console.log("What is this: " + this);
+          // console.log(this.state.messages);
+
+          break;
+        default:
+          throw new Error("Unknown event type")
+      }
+
     }
 
 

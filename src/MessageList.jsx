@@ -32,6 +32,7 @@ class MessageList extends Component {
         key={ index }
         username={ message.username }
         content={ message.content }
+        type={ message.type}
       />
     });
 

@@ -7,10 +7,9 @@ class Chatbar extends Component {
           <input
             type="text"
             className="chatbar-username"
-            defaultValue={this.props.usernameInput}
             placeholder="Your Name (Optional)"
             value={this.props.value}
-            onChange={this.props.handleChange}
+            onBlur={this.props.handleChange}
           />
           <input
             type="text"

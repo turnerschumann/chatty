@@ -1,5 +1,5 @@
 body {
-  background: white;
+  background: snow;
   color: black;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -7,19 +7,20 @@ body {
 }
 
 .chatbar {
-  background: tomato;
-  border-top: 1px solid black;
-  bottom: 0;
+
+  bottom: 2em;
   display: flex;
   left: 0;
   padding: 5px;
   position: fixed;
-  right: 0;
+  right: 2em;
+  left: 2em;
 }
 
 .chatbar-message,
 .chatbar-username {
-  border: 1px solid black;
+  border: 1px solid #2fc1c3;
+  border-radius: 15px;
   display: block;
   height: 40px;
   line-height: 40px;
@@ -50,20 +51,25 @@ body {
   overflow: hidden;
   margin: 5px;
   padding: 0 10px;
+  height: 50px;
 }
 
 .message-content {
   flex: 8;
+  background-color: #2fc1c3;
+  color: white;
+  border-radius: 15px;
 }
 
 .message-username {
   flex: 2;
   font-weight: 700;
+  vertical-align: bottom;
 }
 
 .navbar {
-  background: tomato;
-  border-bottom: 1px solid black;
+  background: #2fc1c3;
+  color: white;
   height: 60px;
   left: 0;
   padding: 0 10px;
@@ -82,5 +88,10 @@ body {
   line-height: 60px;
   padding: 0 10px;
   text-decoration: none;
+}
+
+.usersOnline {
+  color: white;
+  float: right;
 }
 

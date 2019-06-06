@@ -28,6 +28,13 @@ wss.broadcast = function broadcast(data) {
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
+  // console.log(typeof wss.clients.size);
+  const usersOnline = {
+    type: "users online",
+    online: wss.clients.size.toString()
+  }
+
+  wss.broadcast(JSON.stringify(usersOnline));
 
   ws.onmessage = function (event) {
     const parsedMessage = JSON.parse(event.data);

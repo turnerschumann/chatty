@@ -13,6 +13,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      usersOnline: "0",
       currentUser: {name: "Anonymous"}, // optional. if currentUser is not defined, it means the user is Anonymous
       messages: []
     }
@@ -63,7 +64,7 @@ class App extends Component {
 
       // console.log(JSON.parse(event.data));
       const data = JSON.parse(event.data);
-      // console.log("Recieved data rom server: " + data.type);
+      console.log("Recieved data rom server: " + data.online);
       const messages = this.state.messages.concat(data);
       switch(data.type) {
         case "notification":
@@ -73,6 +74,15 @@ class App extends Component {
               // type: data.type,
               messages: messages
             });
+          break;
+        case "users online":
+
+          // console.log("What is this: " + this);
+            this.setState({
+              // type: data.type,
+              usersOnline: data.online
+            });
+              console.log("State of onlineUsers" + this.state.usersOnline)
           break;
         case "message":
           // const messages = this.state.messages.concat(data);
@@ -100,6 +110,7 @@ class App extends Component {
       <div>
         <nav className="navbar">
           <a href="/" className="navbar-brand">Chatty</a>
+          <span className="usersOnline">{this.state.usersOnline} users online</span>
         </nav>
         <Message />
         <Chatbar

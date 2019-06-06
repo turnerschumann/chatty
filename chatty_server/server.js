@@ -34,6 +34,7 @@ wss.on('connection', (ws) => {
     online: wss.clients.size.toString()
   }
 
+
   wss.broadcast(JSON.stringify(usersOnline));
 
   ws.onmessage = function (event) {
@@ -48,5 +49,8 @@ wss.on('connection', (ws) => {
 
 
   // Set up a callback for when a client closes the socket. This usually means they closed their browser.
-  ws.on('close', () => console.log('Client disconnected'));
+  ws.on('close', () => {
+    console.log('Client disconnected');
+    wss.broadcast(JSON.stringify(usersOnline));
+  });
 });

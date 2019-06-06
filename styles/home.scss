@@ -7,14 +7,17 @@ body {
 }
 
 .chatbar {
-
-  bottom: 2em;
+  bottom: 0px;
   display: flex;
   left: 0;
   padding: 5px;
   position: fixed;
-  right: 2em;
-  left: 2em;
+  right: 0px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  padding-right: 2em;
+  padding-left: 2em;
+  background-color: snow;
 }
 
 .chatbar-message,
@@ -41,30 +44,44 @@ body {
   padding: 5px;
 }
 
+.messages-container {
+  /*bottom: 100px;*/
+  margin-bottom: 100px;
+  margin-right: 40px;
+  margin-left: 10px;
+
+}
+
 .message.system {
   font-style: italic;
   padding: 5px 20px;
+  margin: 10px;
 }
 
 .message-content,
 .message-username {
   overflow: hidden;
-  margin: 5px;
+  margin: 10px;
   padding: 0 10px;
-  height: 50px;
+  /*height: 50px;*/
 }
 
 .message-content {
   flex: 8;
+  right: 50px;
   background-color: #2fc1c3;
   color: white;
-  border-radius: 15px;
+  border-radius: 15px 15px 15px 2px;
+  padding-top: 15px;
+  padding-top: 15px;
+  width: 50%;
 }
 
 .message-username {
   flex: 2;
   font-weight: 700;
-  vertical-align: bottom;
+  padding-top: 35px;
+  padding-right: 0px;
 }
 
 .navbar {
@@ -93,5 +110,7 @@ body {
 .usersOnline {
   color: white;
   float: right;
+  display: block;
+
 }
 

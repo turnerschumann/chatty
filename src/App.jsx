@@ -112,14 +112,16 @@ class App extends Component {
           <a href="/" className="navbar-brand">Chatty</a>
           <span className="usersOnline">{this.state.usersOnline} users online</span>
         </nav>
-        <Message />
-        <Chatbar
-          currentUser={this.state.currentUser}
-          onCompose={this.onCompose}
-          handleChange={this.handleChange}
-        />
-        <MessageList messages={this.state.messages}/>
-      </div>
+        <div className="messages-container">
+          <Message />
+          <MessageList messages={this.state.messages}/>
+        </div>
+          <Chatbar
+            currentUser={this.state.currentUser}
+            onCompose={this.onCompose}
+            handleChange={this.handleChange}
+          />
+     </div>
     );
   }
 }

@@ -14,7 +14,7 @@ class App extends Component {
 
     this.state = {
       usersOnline: "0",
-      currentUser: {name: "Anonymous"}, // optional. if currentUser is not defined, it means the user is Anonymous
+      currentUser: {name: "Anonymous", color: "black"}, // optional. if currentUser is not defined, it means the user is Anonymous
       messages: []
     }
 
@@ -47,6 +47,7 @@ class App extends Component {
       // const messages = this.state.messages.concat(newMessage);
       // this.setState({messages: messages})
       event.target.value = "";
+
     }
   }
 
@@ -55,6 +56,7 @@ class App extends Component {
   componentDidMount() {
     console.log("componentDidMount <App />");
     this.connection = new WebSocket(URL)
+
 
     this.connection.onopen = function (event) {
       console.log("Connected to Server")
@@ -90,8 +92,9 @@ class App extends Component {
               // type: data.type,
               messages: messages
             });
-          // console.log("What is this: " + this);
-          // console.log(this.state.messages);
+
+          console.log("What is this: " + this);
+          console.log(this.state.messages);
 
           break;
         default:

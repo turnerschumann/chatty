@@ -4,6 +4,7 @@ class Message extends Component {
 
 // console.log("The type in message is: " + this.props);
 
+
   render() {
     return this.props.type === 'message' ? (
       <main className="messages">

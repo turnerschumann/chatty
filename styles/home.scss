@@ -1,10 +1,12 @@
 body {
   background: snow;
-  color: black;
+  color: #435556;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   margin: 70px 0;
 }
+
+
 
 .chatbar {
   bottom: 0px;
@@ -22,13 +24,22 @@ body {
 
 .chatbar-message,
 .chatbar-username {
-  border: 1px solid #2fc1c3;
+  border: 0px solid #2fc1c3;
   border-radius: 15px;
   display: block;
   height: 40px;
   line-height: 40px;
   margin: 5px;
   padding: 0 9px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.17);
+  user-select: none;
+}
+
+.chatbar-message:focus {
+  outline-width: 0
+}
+.chatbar-username:focus {
+  outline-width: 0
 }
 
 .chatbar-message {
@@ -69,12 +80,13 @@ body {
 .message-content {
   flex: 8;
   right: 50px;
-  background-color: #2fc1c3;
+  background-color: #4ba8aa;
   color: white;
   border-radius: 15px 15px 15px 2px;
   padding-top: 15px;
   padding-top: 15px;
   width: 50%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
 }
 
 .message-username {
@@ -82,6 +94,7 @@ body {
   font-weight: 700;
   padding-top: 35px;
   padding-right: 0px;
+  text-align: right;
 }
 
 .navbar {
@@ -111,6 +124,7 @@ body {
   color: white;
   float: right;
   display: block;
+  margin-top: 20px;
 
 }
 

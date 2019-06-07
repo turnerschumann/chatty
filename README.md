@@ -6,7 +6,7 @@ This app was built to replicate modern chat application like Slack and Facebook 
 ## Getting Started 
 
 Clone the repo and run npm install in the root. Run npm start to start the webserver.
-Navigate to chatty_server dirictory and run npm install. Run npm start to start the websocket server.
+Navigate to chatty_server directory and run npm install. Run npm start to start the websocket server.
 Browse to http://0.0.0.0:3000/ to access the app.
 
 ## Screenshots

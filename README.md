@@ -9,6 +9,10 @@ Clone the repo and run npm install in the root. Run npm start to start the webse
 Navigate to chatty_server dirictory and run npm install. Run npm start to start the websocket server.
 Browse to http://0.0.0.0:3000/ to access the app.
 
+## Screenshots
+
+!["Screenshot of main page with an open conversation"](https://github.com/turnerschumann/chatty/blob/master/docs/main.png)
+
 ## Dependencies
 
 Dependencies:

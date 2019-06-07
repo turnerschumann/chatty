@@ -1,7 +1,7 @@
 Chatty
 =====================
 
-This app was built to modern chat application like Slack and Facebook Messenger. By utilizing websockets, users are able to converse in real-time.
+This app was built to replicate modern chat application like Slack and Facebook Messenger. By utilizing websockets, users are able to converse in real-time.
 
 ## Getting Started 
 

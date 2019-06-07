@@ -1,7 +1,7 @@
 Chatty
 =====================
 
-A minimal and light dev environment for ReactJS.
+This app was built to modern chat application like Slack and Facebook Messenger. By utilizing websockets, users are able to converse in real-time.
 
 
 

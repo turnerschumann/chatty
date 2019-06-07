@@ -78,6 +78,7 @@ class App extends Component {
       <div>
         <nav className="navbar">
           <a href="/" className="navbar-brand">Chatty</a>
+          <img className="logo" src="/assets/chattr.png" />
           <span className="usersOnline">{this.state.usersOnline} users online</span>
         </nav>
         <div className="messages-container">

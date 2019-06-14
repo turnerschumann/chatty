@@ -18,16 +18,22 @@ class App extends Component {
   }
 
   handleChange(event) {
+    if(!event.target.value || event.target.value === this.state.currentUser.name) {
+      console.log("Nothing happens")
+    } else {
       event.preventDefault()
       const currentUser = this.state.currentUser.name;
       const newUser = event.target.value
       const message = JSON.stringify({type: "notification", content:`${currentUser} has changed their name to ${newUser}`});
       this.connection.send(message)
       this.setState({currentUser: {name: newUser},});
+    }
   }
 
   onCompose(event) {
     if(event.key === 'Enter') {
+      console.log(event.target.value)
+
       event.preventDefault()
       const newMessage = {type: "message", username: this.state.currentUser.name, content: event.target.value };
       const stringifiedMessage = JSON.stringify(newMessage);

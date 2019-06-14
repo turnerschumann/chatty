@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   onCompose(event) {
-    if(event.key === 'Enter') {
+    if(event.key === 'Enter' && event.target.value !== "") {
       console.log(event.target.value)
 
       event.preventDefault()

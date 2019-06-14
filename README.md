@@ -1,13 +1,15 @@
 Chatty
 =====================
 
-This app was built to modern chat application like Slack and Facebook Messenger. By utilizing websockets, users are able to converse in real-time.
+This app was built to replicate modern chat application like Slack and Facebook Messenger. By utilizing websockets, users are able to converse in real-time.
 
 ## Getting Started 
 
-Clone the repo and run npm install in the root. Run npm start to start the webserver.
-Navigate to chatty_server dirictory and run npm install. Run npm start to start the websocket server.
-Browse to http://0.0.0.0:3000/ to access the app.
+1. Clone the repo and run npm install in the root. 
+2. Run npm start to start the webserver.
+3. Navigate to chatty_server directory and run npm install. 
+4. Run npm start to start the websocket server.
+5. Browse to http://0.0.0.0:3000/ to access the app.
 
 ## Screenshots
 
